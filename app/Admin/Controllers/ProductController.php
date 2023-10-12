@@ -17,6 +17,7 @@ class ProductController extends AdminController
      */
     protected $title = 'Product';
 
+
     /**
      * Make a grid builder.
      *
@@ -30,7 +31,7 @@ class ProductController extends AdminController
         $grid->column('name', __('Name'));
         $grid->column('price', __('Price'));
         $grid->column('summary', __('Summary'));
-        $grid->column('imgLink', __('ImgLink'));
+        $grid->column('imgLink')->image();
         $grid->column('docLink', __('DocLink'));
         $grid->column('status', __('Status'));
         $grid->column('created_at', __('Created at'));
@@ -54,6 +55,7 @@ class ProductController extends AdminController
         $show->field('price', __('Price'));
         $show->field('summary', __('Summary'));
         $show->field('imgLink', __('ImgLink'));
+        
         $show->field('docLink', __('DocLink'));
         $show->field('status', __('Status'));
         $show->field('created_at', __('Created at'));
@@ -70,11 +72,12 @@ class ProductController extends AdminController
     protected function form()
     {
         $form = new Form(new Product());
-
         $form->text('name', __('Name'));
         $form->number('price', __('Price'));
         $form->textarea('summary', __('Summary'));
-        $form->image('imgLink', __('ImgLink'));
+
+        // Modify the upload directory
+        $form->image('imgLink')->uniqueName();
         $form->file('docLink', __('DocLink'));
         $form->switch('status', __('Status'));
 
