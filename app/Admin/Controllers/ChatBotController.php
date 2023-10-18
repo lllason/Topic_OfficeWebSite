@@ -31,6 +31,7 @@ class ChatBotController extends AdminController
         $grid->column('rul_name', __('Rule Name'));
         $grid->column('intent', __('Intent'));
         $grid->column('example', __('Example'));
+        $grid->column('response', __('Response'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -50,6 +51,8 @@ class ChatBotController extends AdminController
         $show->field('id', __('Id'));
         $show->field('rule_name', __('Name'));
         $show->field('intent', __('Intent'));
+        $show->field('example', __('Intent'));
+        $show->field('response', __('Response'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
         
@@ -66,15 +69,11 @@ class ChatBotController extends AdminController
     {
         $form = new Form(new Chatbot());
         $form->text('rule_name', __('規則目錄'));
-
-        $form->table('intent', function ($table) {
-            $table->text('intent');
-            $table->text('utter_response');
-            $table->text('example1');
-            $table->text('example2');
-            $table->text('example3');
-        });
-
+        $form->text('intent', __('Intent'));
+        $form->text('example', __('Intent'));
+        $form->text('response', __('Response'));
+        $form->text('created_at', __('Created at'));
+        $form->text('updated_at', __('Updated at'));
 
         return $form;
     }

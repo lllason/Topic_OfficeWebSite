@@ -55,7 +55,6 @@ class ProductController extends AdminController
         $show->field('price', __('Price'));
         $show->field('summary', __('Summary'));
         $show->field('imgLink', __('ImgLink'));
-        
         $show->field('docLink', __('DocLink'));
         $show->field('status', __('Status'));
         $show->field('created_at', __('Created at'));
@@ -75,12 +74,31 @@ class ProductController extends AdminController
         $form->text('name', __('Name'));
         $form->number('price', __('Price'));
         $form->textarea('summary', __('Summary'));
+        $form->image('imgLink', __('imgLink'))->move("images/".$this->title)->name(function ($file) {
+            return date("YmdHis").'.'.$file->guessExtension();
+        });
 
-        // Modify the upload directory
-        $form->image('imgLink')->uniqueName();
+
         $form->file('docLink', __('DocLink'));
         $form->switch('status', __('Status'));
 
+
+        $form->submitted(function (Form $form) {
+            /*
+            echo "submitted";
+            dump($form);
+            exit;
+            */
+        });
+
+        $form->saving(function (Form $form) {
+            /*
+            echo "saving";
+            dump($_REQUEST);
+            dump($form);
+            exit;
+            */
+        });        
         return $form;
     }
 }

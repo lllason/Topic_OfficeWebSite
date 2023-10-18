@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('chatbots', function (Blueprint $table) {
             $table->id();
             $table->string('rule_name', 30)->unique();
-            $table->json('intent',30);
-            $table->json('example',30);
+            $table->string('intent',30)->nullable();;
+            $table->string('example',100)->nullable();;
+            $table->string('response',100)->nullable();;
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });
