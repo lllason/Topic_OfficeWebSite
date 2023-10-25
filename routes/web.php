@@ -27,4 +27,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::resource('/products', ProductController::class);
+Route::get('/product', [ProductController::class, 'index'])->name('product')->withoutMiddleware(['auth:sanctum', 'verified']);;

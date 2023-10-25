@@ -28,10 +28,19 @@ class ChatBotController extends AdminController
         $grid = new Grid(new Chatbot());
 
         $grid->column('id', __('Id'));
-        $grid->column('rul_name', __('Rule Name'));
-        $grid->column('intent', __('Intent'));
-        $grid->column('example', __('Example'));
-        $grid->column('response', __('Response'));
+        $grid->column('rul_name', __('規則目錄'));
+        $grid->column('intent1', __('意圖1'));
+        $grid->column('example1', __('問題範例1'));
+        $grid->column('response1', __('Response'));
+
+        $grid->column('intent2', __('意圖2'));
+        $grid->column('example2', __('Example'));
+        $grid->column('response2', __('Response'));
+
+        $grid->column('intent3', __('意圖3'));
+        $grid->column('example3', __('Example'));
+        $grid->column('response3', __('Response'));
+
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -50,9 +59,18 @@ class ChatBotController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('rule_name', __('Name'));
-        $show->field('intent', __('Intent'));
-        $show->field('example', __('Intent'));
-        $show->field('response', __('Response'));
+        $show->field('intent1', __('Intent'));
+        $show->field('example1', __('Example'));
+        $show->field('response1', __('Response'));
+
+        $show->field('intent2', __('Intent'));
+        $show->field('example2', __('Example'));
+        $show->field('response2', __('Response'));
+
+        $show->field('intent3', __('Intent'));
+        $show->field('example3', __('Example'));
+        $show->field('response3', __('Response'));
+
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
         
@@ -69,9 +87,18 @@ class ChatBotController extends AdminController
     {
         $form = new Form(new Chatbot());
         $form->text('rule_name', __('規則目錄'));
-        $form->text('intent', __('Intent'));
-        $form->text('example', __('Intent'));
-        $form->text('response', __('Response'));
+        $form->text('intent1', __('Intent'));
+        $form->text('example2', __('Intent'));
+        $form->text('response3', __('Response'));
+
+        $form->text('intent2', __('Intent'));
+        $form->text('example2', __('Intent'));
+        $form->text('response2', __('Response'));
+
+        $form->text('intent3', __('Intent'));
+        $form->text('example3', __('Intent'));
+        $form->text('response3', __('Response'));
+        
         $form->text('created_at', __('Created at'));
         $form->text('updated_at', __('Updated at'));
 

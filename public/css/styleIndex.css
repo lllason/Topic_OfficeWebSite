@@ -1,0 +1,39 @@
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.MainTable {
+	height: 100%;
+	width: 920px;
+	background-attachment: scroll;
+	background-image: url(images/bkg_Table.png);
+	background-repeat: repeat-y;
+	background-position: center;
+}
+.BlockProduct {
+	width: 240px;
+	text-align: left;
+}
+.BlockNews {
+	width: 200px;
+	text-align: left;
+}
+.copyright {
+	background-image: url(/app/en-us/images/bkg_copyright.jpg);
+	background-position: center bottom;
+	height: 85px;
+	background-repeat: no-repeat;
+}
+.copyright a:link {
+	color: #0066CC;
+}
+.copyright p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999999;
+	line-height: 150%;
+	padding-top: 5px;
+}
+.NavText a {
+	color: #0066CC;
+}
